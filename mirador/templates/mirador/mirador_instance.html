@@ -1,0 +1,55 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+<script src="{% static "vendors/mirador/mirador.js" %}"></script>
+<link rel="stylesheet" href="{% static "vendors/mirador/css/mirador-combined.css" %}">
+<style type="text/css">
+    #viewer { width: 100%; height: 100%; }
+  </style>
+  </head>
+  <body>
+<div id="viewer"></div>
+
+<script>
+$(function() {
+      Mirador({
+        "id": "viewer",
+        "mainMenuSettings" : {
+           'show' : false
+        },
+        "buildPath" : "{% static "vendors/mirador/" %}",
+        "layout" : "{{ layout }}",
+        "saveSession" : false,
+        "data": [
+        {% for i in manifests %}
+        { "manifestUri": "{{ i }}", "location": "Harvard University"},
+        {% endfor %}
+        ],
+        "windowObjects": [
+        {% for key,value in manifest_canvas_map.items %}
+        {
+            "loadedManifest": "{{ key }}",
+            "viewType" : "{{ view_type }}",
+            "canvasID" : "{{ value }}",
+            "annotationLayer" : "false",
+            "annotationCreation" : "false",
+            "annotationState" : "annoOnCreateOff",
+            "sidePanel" : false,
+            "fullScreen" : false,
+            "layoutOptions" : {
+                "newObject" : true,
+                "close" : false,
+                "slotRight" : false,
+                "slotLeft" : false,
+                "slotAbove" : false,
+                "slotBelow" : false
+             }
+        },
+        {% endfor %}
+        ]
+      });
+    });
+</script>
+</body>
+</html>

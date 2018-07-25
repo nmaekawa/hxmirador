@@ -13,9 +13,6 @@ if __name__ == "__main__":
     if os.environ.get("DJANGO_SETTINGS_MODULE", None) is None:
         os.environ.setdefault("DJANGO_SETTINGS_MODULE", "hxmirador.settings.dev")
 
-    from django.conf import settings
-    print('*********** base_dir({})'.format(settings.BASE_DIR))
-
     try:
         from django.core.management import execute_from_command_line
     except ImportError:

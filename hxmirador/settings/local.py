@@ -2,6 +2,8 @@ from .dev import *
 
 DEBUG = True
 
+HXLTI_ENFORCE_SSL = False
+
 # Django Extensions
 # http://django-extensions.readthedocs.org/en/latest/
 try:

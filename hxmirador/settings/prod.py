@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'hxlti',
+    'mirador',
 ]
 
 MIDDLEWARE = [
@@ -164,10 +165,11 @@ STATIC_ROOT = os.environ.get(
     'HXMIRADOR_STATIC_ROOT', os.path.join(BASE_DIR, 'static/'))
 
 # hxlti app settings
+HXLTI_ENFORCE_SSL = True
 HXLTI_DUMMY_CONSUMER_KEY = os.environ.get(
     'HXLTI_DUMMY_CONSUMER_KEY',
     'dummy_42237E2AB9614C4EAB0C089A96B40686B1C97DE114EC40659E64F1CE3C195AAC')
-REDIS_URL = os.environ.get(
+HXLTI_REDIS_URL = os.environ.get(
     'REDIS_URL',
     'redis://localhost:6379/0')
 
