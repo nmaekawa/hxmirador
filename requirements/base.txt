@@ -1,0 +1,4 @@
+Django
+-e git+https://github.com/nmaekawa/hxlti-djapp#egg=hxlti-djapp
+
+python-dotenv
