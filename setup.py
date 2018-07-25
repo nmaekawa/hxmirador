@@ -27,6 +27,7 @@ with open('README.md') as readme_file:
 requirements = [
     'Django',
     'python-dotenv',
+    'hxlti-djapp',
 ]
 
 test_requirements = [

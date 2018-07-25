@@ -19,6 +19,5 @@ from django.urls import path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('lti/', include('hxlti.urls')),
     path('mirador/', include('mirador.urls')),
 ]
