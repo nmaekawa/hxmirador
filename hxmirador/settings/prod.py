@@ -168,7 +168,7 @@ STATIC_ROOT = os.environ.get(
 
 # hxlti app settings
 use_ssl = os.environ.get('HXLTI_ENFORCE_SSL', 'true')
-HXLTI_ENFORCE_SSL = (user_ssl.lower() == true)
+HXLTI_ENFORCE_SSL = (use_ssl.lower() == true)
 HXLTI_DUMMY_CONSUMER_KEY = os.environ.get(
     'HXLTI_DUMMY_CONSUMER_KEY',
     'dummy_42237E2AB9614C4EAB0C089A96B40686B1C97DE114EC40659E64F1CE3C195AAC')
