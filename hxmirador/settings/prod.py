@@ -40,16 +40,17 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'hxlti',
     'mirador',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
 ROOT_URLCONF = PROJECT_NAME + '.urls'
@@ -175,6 +176,13 @@ HXLTI_DUMMY_CONSUMER_KEY = os.environ.get(
 HXLTI_REDIS_URL = os.environ.get(
     'REDIS_URL',
     'redis://localhost:6379/0')
+
+#
+# settings for django-cors-headers
+#
+CORS_ORIGIN_ALLOW_ALL = True  # accept requests from anyone
+
+
 
 
 
