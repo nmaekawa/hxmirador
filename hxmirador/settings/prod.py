@@ -168,7 +168,8 @@ STATIC_ROOT = os.environ.get(
     'HXMIRADOR_STATIC_ROOT', os.path.join(BASE_DIR, 'static/'))
 
 # hxlti app settings
-use_ssl = os.environ.get('HXLTI_ENFORCE_SSL', 'true')
+# assuming ssl terminator in front of django (nginx reverse proxy)
+use_ssl = os.environ.get('HXLTI_ENFORCE_SSL', 'false')
 HXLTI_ENFORCE_SSL = (use_ssl.lower() == 'true')
 HXLTI_DUMMY_CONSUMER_KEY = os.environ.get(
     'HXLTI_DUMMY_CONSUMER_KEY',
