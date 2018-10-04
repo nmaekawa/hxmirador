@@ -76,10 +76,14 @@ WSGI_APPLICATION = PROJECT_NAME + '.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
+HXMIRADOR_DB_PATH = os.environ.get(
+    'HXMIRADOR_DB_PATH',
+    os.path.join(BASE_DIR, PROJECT_NAME + '_sqlite3.db')
+)
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, PROJECT_NAME + '_sqlite3.db'),
+        'NAME': HXMIRADOR_DB_PATH,
     }
 }
 
