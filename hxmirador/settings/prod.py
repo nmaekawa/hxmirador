@@ -134,6 +134,11 @@ LOGGING = {
         },
     },
     'loggers': {
+        'mirador': {
+            'level': 'DEBUG',
+            'handlers': ['console'],
+            'propagate': True
+        },
         'hxlti_dj': {
             'level': 'DEBUG',
             'handlers': ['console'],

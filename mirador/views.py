@@ -12,6 +12,7 @@ from hxlti.decorators import require_lti_launch
 @xframe_options_exempt  # allows rendering in Canvas|edx frame
 @require_lti_launch
 def lti_mirador(request):
+
     # get list of manifests
     manifests_ids = request.POST.get('custom_manifests', '')
     manifests = manifests_ids.split(';') if manifests_ids else []
@@ -36,6 +37,11 @@ def lti_mirador(request):
                 found_canvas = True
         if not found_canvas:
             manifest_canvas_map[m] = ''
+
+    logger = logging.getLogger(__name__)
+    logger.debug(
+        'manifests({}), layout({}), view_type({}), canvas_map({})'.format(
+            manifests, layout, view_type, manifest_canvas_map))
 
     return render(
         request, 'mirador/mirador_instance.html', {
