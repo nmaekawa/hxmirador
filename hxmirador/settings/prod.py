@@ -193,6 +193,32 @@ HXLTI_REDIS_URL = os.environ.get(
 CORS_ORIGIN_ALLOW_ALL = True  # accept requests from anyone
 
 
+# hxmirador lti params mapping
+HXMIRADOR_CUSTOM_PARAMETERS_MAP = {
+    'custom_canvas_ids': {
+        'ptype': 'list',
+        'mapto': 'canvases',
+    },
+    'custom_object_ids': {
+        'ptype': 'list',
+        'mapto': 'manifests',
+    },
+    'custom_layout': {
+        'ptype': 'string',
+        'mapto': 'layout',
+    },
+    'custom_view_type': {
+        'ptype': 'string',
+        'mapto': 'view_type',
+    },
+    # if there's multiple params that map to the same var name
+    # and the request sends these multiple params (say with different values)
+    # the last one defined in this MAP takes precedence.
+    'custom_manifests': {
+        'ptype': 'list',
+        'mapto': 'manifests',
+    },
+}
 
 
 

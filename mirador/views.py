@@ -2,30 +2,33 @@
 import logging
 from urllib.parse import urlparse
 
+from django.conf import settings
 from django.shortcuts import render
 from django.views.decorators.clickjacking import xframe_options_exempt
 from django.views.decorators.csrf import csrf_exempt
 
 from hxlti.decorators import require_lti_launch
+from mirador.util import unpack_custom_parameters
 
 @csrf_exempt
 @xframe_options_exempt  # allows rendering in Canvas|edx frame
 @require_lti_launch
 def lti_mirador(request):
 
-    # get list of manifests
-    manifests_ids = request.POST.get('custom_manifests', '')
-    manifests = manifests_ids.split(';') if manifests_ids else []
+    # get lti params from request
+    lti_params = unpack_custom_parameters(request.POST)
 
     # mirador options
-    layout = request.POST.get('custom_layout', '1x1')
+    layout = lti_params.get('layout', '1x1')
 
     # window specific parameters
-    view_type = request.POST.get('custom_view_type', 'ImageView')
+    view_type = lti_params.get('view_type', 'ImageView')
 
     # canvases
-    canvas_ids = request.POST.get('canvases', None)
-    canvases = canvas_ids.split(';') if canvas_ids else []
+    canvases = lti_params.get('canvases', [])
+
+    # manifests
+    manifests = lti_params.get('manifests', [])
 
     # map manifests to canvases
     manifest_canvas_map = {}
@@ -51,6 +54,7 @@ def lti_mirador(request):
             'manifest_canvas_map': manifest_canvas_map,
 
         })
+
 
 
 

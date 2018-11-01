@@ -1,7 +1,7 @@
 Django==2.0.7
 
 python-dotenv==0.8.2
--e git+https://github.com/nmaekawa/hxlti-djapp#egg=hxlti-djapp
+git+https://github.com/nmaekawa/hxlti-djapp#egg=hxlti-djapp
 
 django-cors-headers==2.4.0
 
