@@ -1,7 +1,7 @@
-Django==2.0.7
+Django==2.2.1
 
-python-dotenv==0.8.2
-git+https://github.com/nmaekawa/hxlti-djapp#egg=hxlti-djapp
+python-dotenv==0.10.2
+git+https://github.com/nmaekawa/hxlti-djapp.git#egg=hxlti-djapp
 
-django-cors-headers==2.4.0
+django-cors-headers==3.0.1
 
