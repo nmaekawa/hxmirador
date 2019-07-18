@@ -27,6 +27,7 @@ with open('README.md') as readme_file:
 requirements = [
     'Django',
     'python-dotenv',
+    'django-cors-headers',
 ]
 
 test_requirements = [
