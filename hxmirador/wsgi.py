@@ -18,6 +18,6 @@ os.environ.setdefault("DJANGO_SETTINGS_MODULE", "hxmirador.settings.prod")
 dotenv_path = os.environ.get(
     'HXMIRADOR_DOTENV_PATH', 'hxmirador.settings.prod')
 if dotenv_path:
-    load_dotenv(dotenv_path)
+    load_dotenv(dotenv_path=dotenv_path, override=True)
 
 application = get_wsgi_application()
