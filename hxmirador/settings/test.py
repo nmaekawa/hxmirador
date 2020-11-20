@@ -1,8 +1,10 @@
-from .dev import *
-
 # so it works with pytest
 import os
+
 from dotenv import load_dotenv
+
+from .dev import *
+
 dotenv_path = os.environ.get('HXMIRADOR_DOTENV_PATH', None)
 if dotenv_path:
     load_dotenv(dotenv_path)

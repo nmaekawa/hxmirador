@@ -3,6 +3,7 @@ import logging
 
 from django.conf import settings
 
+
 def unpack_custom_parameters(post_params):
     request_params = {}
     pmap = settings.HXMIRADOR_CUSTOM_PARAMETERS_MAP

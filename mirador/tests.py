@@ -1,9 +1,6 @@
 import pytest
-
 from django.conf import settings
-
 from mirador.util import unpack_custom_parameters
-
 
 
 def test_request_params_ok():
