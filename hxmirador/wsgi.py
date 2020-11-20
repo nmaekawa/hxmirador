@@ -15,8 +15,7 @@ from dotenv import load_dotenv
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "hxmirador.settings.prod")
 
 # if dotenv file, load it
-dotenv_path = os.environ.get(
-    'HXMIRADOR_DOTENV_PATH', 'hxmirador.settings.prod')
+dotenv_path = os.environ.get("HXMIRADOR_DOTENV_PATH", "hxmirador.settings.prod")
 if dotenv_path:
     load_dotenv(dotenv_path=dotenv_path, override=True)
 

@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 
 if __name__ == "__main__":
     # if dotenv file, load it
-    dotenv_path = os.environ.get('HXMIRADOR_DOTENV_PATH', None)
+    dotenv_path = os.environ.get("HXMIRADOR_DOTENV_PATH", None)
     if dotenv_path:
         load_dotenv(dotenv_path)
 
@@ -31,7 +31,3 @@ if __name__ == "__main__":
         raise
 
     execute_from_command_line(sys.argv)
-
-
-
-
