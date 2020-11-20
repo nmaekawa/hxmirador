@@ -3,7 +3,8 @@ import os
 
 from dotenv import load_dotenv
 
-from .dev import *
+from .dev import *  # noqa
+from .dev import INSTALLED_APPS, MIDDLEWARE
 
 dotenv_path = os.environ.get("HXMIRADOR_DOTENV_PATH", None)
 if dotenv_path:
@@ -16,7 +17,7 @@ HXLTI_ENFORCE_SSL = False
 # Django Extensions
 # http://django-extensions.readthedocs.org/en/latest/
 try:
-    import django_extensions
+    import django_extensions  # noqa
 
     INSTALLED_APPS += ["django_extensions"]
 except ImportError:
@@ -25,7 +26,7 @@ except ImportError:
 # Django Debug Toolbar
 # http://django-debug-toolbar.readthedocs.org/en/latest/
 try:
-    import debug_toolbar
+    import debug_toolbar  # noqa
 
     INSTALLED_APPS += ["debug_toolbar"]
     MIDDLEWARE += ["debug_toolbar.middleware.DebugToolbarMiddleware"]

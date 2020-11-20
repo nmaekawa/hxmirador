@@ -1,4 +1,3 @@
-import pytest
 from django.conf import settings
 from mirador.util import unpack_custom_parameters
 

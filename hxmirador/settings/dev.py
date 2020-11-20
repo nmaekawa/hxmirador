@@ -1,4 +1,5 @@
-from .prod import *
+from .prod import *  # noqa
+from .prod import LOGGING
 
 DEBUG = True
 

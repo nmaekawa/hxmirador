@@ -1,7 +1,5 @@
 import logging
-from urllib.parse import urlparse
 
-from django.conf import settings
 from django.shortcuts import render
 from django.views.decorators.clickjacking import xframe_options_exempt
 from django.views.decorators.csrf import csrf_exempt
